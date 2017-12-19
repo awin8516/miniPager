@@ -1,0 +1,45 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>sloter</title>
+<script src="../js/jquery.1.11.3.min.js"></script>
+<script src="../js/miniPager.js"></script>
+<style>
+html, body{ margin:0; padding:0;text-align:center;}
+.page-home{background: rgb(224, 195, 195)}
+.page-product{background: rgb(195, 224, 218)}
+.page-news{background: rgb(177, 173, 201)}
+.page-about{background: rgb(224, 220, 195)}
+</style>
+</head>
+<body>
+    <div class="pages">
+        <div id="pageHome" class="page page-home">home<br><br><br><button id="btn2product">to product</button></div>
+        <div id="pageProduct" class="page page-product">product<br><br><br><button id="btn2news">to news</button></div>
+        <div id="pageNews" class="page page-news">news<br><br><br><button id="btn2about">to about</button></div>
+        <div id="pageAbout" class="page page-about">about<br><br><br><button id="back2home">back home</button></div>
+    </div>
+    
+<script type="text/javascript">
+	jQuery(window).ready(function(e) {
+		var myPager = new miniPager('.page');
+        myPager.to('pageHome');
+        $('#btn2product').on('click', function(){
+            myPager.to('pageProduct');
+        })
+        $('#btn2news').on('click', function(){
+            myPager.to('pageNews');
+        })
+        $('#btn2about').on('click', function(){
+            myPager.to('pageAbout');
+        })
+        $('#back2home').on('click', function(){
+            myPager.back('pageHome');
+        })
+        
+	});
+</script>
+</body>
+</html>
